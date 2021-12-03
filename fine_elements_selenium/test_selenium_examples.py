@@ -1,0 +1,40 @@
+from selenium.webdriver.common.by import By
+
+from locators import MainPage
+from selenium.webdriver.common.action_chains import ActionChains
+
+
+#
+# def test_element_by_class_name_selector(browser):
+#     bro = browser
+#     bro.find_element_by_css_selector(MainPage.promoblock).click()
+#     bro.find_element_by_class_name("breadcrumb")
+#
+#
+# def test_element_by_featured_selector(browser):
+#     bro = browser
+#     bro.find_element_by_css_selector(MainPage.featured_box).click()
+#     bro.find_element_by_class_name("breadcrumb")
+#
+#
+# def test_element_by_id(browser):
+#     browser.find_element(By.ID, "slideshow0").click()
+#     browser.find_element(By.CLASS_NAME, "breadcrumb")
+#
+#
+# def test_element_by_link_text(browser):
+#     desktops_link = browser.find_element_by_link_text("Desktops")
+#     ActionChains(browser).move_to_element(desktops_link).pause(2).perform()
+#     browser.find_element_by_link_text("Show AllDesktops").click()
+#     browser.find_element_by_partial_link_text("Your Store").click()
+
+
+def test_elements_by_css_selector(browser):
+    navbar = browser.find_elements_by_xpath("//*[@id='menu']/div[2]/ul/li")
+    for item in navbar:
+        print(item.get_attribute("class"))
+        ActionChains(browser).move_to_element(item).pause(0.5).perform()
+
+# def test_element_by_class_name_selector(parametrize_browser):
+#     parametrize_browser.find_element_by_class_name("swiper-viewport").click()
+#     parametrize_browser.find_element_by_class_name("breadcrumb")
