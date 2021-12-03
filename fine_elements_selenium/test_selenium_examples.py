@@ -14,9 +14,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 def test_element_by_xpath(browser):
     browser.find_element_by_xpath("//div[@class='row']/div[4]/div/div[2]/h4/a").click()
     browser.find_element_by_xpath("//*[@class='breadcrumb']")
-    elements = browser.find_elements_by_xpath("//select[@name='option[226]/option']").click()
-    for elem in elements:
-        ActionChains(browser).move_to_element(elem).pause(0.5).perform()
+    browser.find_element_by_xpath("//select[@name='option[226]']").click()
+    browser.find_element_by_xpath("//select[@name='option[226]']/option[2]").click()
+    browser.find_element_by_xpath("//button[text()='Add to Cart']").click()
+    browser.find_element_by_xpath("//div[contains(@class, 'alert-success')]")
 
 
 # def test_element_by_featured_selector(browser):
