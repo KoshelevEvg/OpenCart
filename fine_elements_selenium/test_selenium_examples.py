@@ -11,6 +11,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 #     bro.find_element_by_class_name("breadcrumb")
 #
 #
+def test_element_by_xpath(browser):
+    browser.find_element_by_xpath("//div[@class='row']/div[4]/div/div[2]/h4/a").click()
+    browser.find_element_by_xpath("//*[@class='breadcrumb']")
+    elements = browser.find_elements_by_xpath("//select[@name='option[226]/option']").click()
+    for elem in elements:
+        ActionChains(browser).move_to_element(elem).pause(0.5).perform()
+
+
 # def test_element_by_featured_selector(browser):
 #     bro = browser
 #     bro.find_element_by_css_selector(MainPage.featured_box).click()
