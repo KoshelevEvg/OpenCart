@@ -1,23 +1,21 @@
-from selenium.webdriver.common.by import By
-
-from locators import MainPage
+from test_login_admin.locators import MainPage
 from selenium.webdriver.common.action_chains import ActionChains
 
 
 #
-# def test_element_by_class_name_selector(browser):
-#     bro = browser
-#     bro.find_element_by_css_selector(MainPage.promoblock).click()
-#     bro.find_element_by_class_name("breadcrumb")
+def test_element_by_class_name_selector(browser):
+    bro = browser
+    bro.find_element_by_css_selector(MainPage.promoblock).click()
+    bro.find_element_by_class_name("breadcrumb")
 #
 #
-def test_element_by_xpath(browser):
-    browser.find_element_by_xpath("//div[@class='row']/div[4]/div/div[2]/h4/a").click()
-    browser.find_element_by_xpath("//*[@class='breadcrumb']")
-    browser.find_element_by_xpath("//select[@name='option[226]']").click()
-    browser.find_element_by_xpath("//select[@name='option[226]']/option[2]").click()
-    browser.find_element_by_xpath("//button[text()='Add to Cart']").click()
-    browser.find_element_by_xpath("//div[contains(@class, 'alert-success')]")
+# def test_element_by_xpath(browser):
+#     browser.find_element_by_xpath("//div[@class='row']/div[4]/div/div[2]/h4/a").click()
+#     browser.find_element_by_xpath("//*[@class='breadcrumb']")
+#     browser.find_element_by_xpath("//select[@name='option[226]']").click()
+#     browser.find_element_by_xpath("//select[@name='option[226]']/option[2]").click()
+#     browser.find_element_by_xpath("//button[text()='Add to Cart']").click()
+#     browser.find_element_by_xpath("//div[contains(@class, 'alert-success')]")
 
 
 # def test_element_by_featured_selector(browser):
