@@ -13,6 +13,7 @@ def test_element_by_class_name_selector(browser):
 #
 def test_buy_photo(browser):
     br = browser
+    br.maximize_window()
     br.find_element_by_xpath("//*[@id='content']/div[2]/div[4]/div/div[1]").click()
     select_p = br.find_element_by_css_selector("select[class='form-control']")
     select_photo = Select(select_p)
@@ -22,7 +23,7 @@ def test_buy_photo(browser):
     qty.send_keys("2")
     br.find_element_by_css_selector("button[class = 'btn btn-primary btn-lg btn-block']").click()
     br.find_element_by_css_selector("button[class = 'btn btn-inverse btn-block btn-lg dropdown-toggle']").click()
-    # assert br.find_element_by_css_selector("table[class = 'table table-striped']") == True
+    br.find_element_by_css_selector("button[class = 'btn btn-danger btn-xs']").click()
 
 # def test_element_by_featured_selector(browser):
 #     bro = browser

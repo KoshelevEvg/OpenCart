@@ -8,7 +8,7 @@ def pytest_addoption(parser):
 
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def browser(request):
     browser_param = request.config.getoption("--browser")
     if browser_param == "chrome":
