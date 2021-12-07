@@ -1,3 +1,5 @@
+from selenium.webdriver.support.select import Select
+
 from test_login_admin.locators import MainPage
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -9,14 +11,18 @@ def test_element_by_class_name_selector(browser):
     bro.find_element_by_class_name("breadcrumb")
 #
 #
-# def test_element_by_xpath(browser):
-#     browser.find_element_by_xpath("//div[@class='row']/div[4]/div/div[2]/h4/a").click()
-#     browser.find_element_by_xpath("//*[@class='breadcrumb']")
-#     browser.find_element_by_xpath("//select[@name='option[226]']").click()
-#     browser.find_element_by_xpath("//select[@name='option[226]']/option[2]").click()
-#     browser.find_element_by_xpath("//button[text()='Add to Cart']").click()
-#     browser.find_element_by_xpath("//div[contains(@class, 'alert-success')]")
-
+def test_buy_photo(browser):
+    br = browser
+    br.find_element_by_xpath("//*[@id='content']/div[2]/div[4]/div/div[1]").click()
+    select_p = br.find_element_by_css_selector("select[class='form-control']")
+    select_photo = Select(select_p)
+    select_photo.select_by_value("15")
+    qty = br.find_element_by_css_selector("input[name='quantity']")
+    qty.clear()
+    qty.send_keys("2")
+    br.find_element_by_css_selector("button[class = 'btn btn-primary btn-lg btn-block']").click()
+    br.find_element_by_css_selector("button[class = 'btn btn-inverse btn-block btn-lg dropdown-toggle']").click()
+    # assert br.find_element_by_css_selector("table[class = 'table table-striped']") == True
 
 # def test_element_by_featured_selector(browser):
 #     bro = browser
