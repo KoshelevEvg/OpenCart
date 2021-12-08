@@ -5,7 +5,7 @@ from locators import LoginAdmin
 
 @pytest.fixture(scope="session")
 def open_login_page(browser, request):
-    url = ''
+    url = ""
     return browser.get("".join([request.config.getoption("--url"), url]))
 
 
