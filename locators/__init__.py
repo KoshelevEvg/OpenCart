@@ -3,3 +3,4 @@ from .Main import Main
 from .Common import Common
 from .User import User
 from .Product import Product
+from .AlertM import AlertM
