@@ -33,7 +33,7 @@ def test_add_to_cart(browser):
     # Клик по ссылке в блоке alert-success
     AlertMessage(browser).click_to_cart()
     # Проверка ссылки с текстом выбранного продукта
-    browser.find_element_by_link_text(product_name)
+    CartPage(browser).verify_product(product_name)
     # Клик по кнопке Checkout на странице корзины
     CartPage(browser).checkout()
     # Логин с формы авторизации пользователя
